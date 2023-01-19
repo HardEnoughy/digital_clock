@@ -6,16 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>461</width>
-    <height>314</height>
+    <width>324</width>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow, QWidget {
+	color: white;
+	background-color: #121212;
+	font-family: Rubik;
+	font-weight: 600;
+}
+QLabel {
+	font-size: 64pt;
+}</string>
+  </property>
   <widget class="QWidget" name="central_widget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -25,8 +39,14 @@
      <layout class="QHBoxLayout" name="h_layout">
       <item>
        <widget class="QLabel" name="hours_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>10</string>
         </property>
         <property name="textFormat">
          <enum>Qt::MarkdownText</enum>
@@ -54,8 +74,14 @@
       </item>
       <item>
        <widget class="QLabel" name="minutes_label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>22</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

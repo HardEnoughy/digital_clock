@@ -22,10 +22,20 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(461, 314)
+        MainWindow.resize(324, 219)
+        MainWindow.setStyleSheet(u"QMainWindow, QWidget {\n"
+"	color: white;\n"
+"	background-color: #121212;\n"
+"	font-family: Rubik;\n"
+"	font-weight: 600;\n"
+"}\n"
+"QLabel {\n"
+"	font-size: 64pt;\n"
+"}")
         self.central_widget = QWidget(MainWindow)
         self.central_widget.setObjectName(u"central_widget")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.central_widget.setEnabled(True)
+        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.central_widget.sizePolicy().hasHeightForWidth())
@@ -36,6 +46,11 @@ class Ui_MainWindow(object):
         self.h_layout.setObjectName(u"h_layout")
         self.hours_label = QLabel(self.central_widget)
         self.hours_label.setObjectName(u"hours_label")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.hours_label.sizePolicy().hasHeightForWidth())
+        self.hours_label.setSizePolicy(sizePolicy1)
         self.hours_label.setTextFormat(Qt.MarkdownText)
         self.hours_label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -43,17 +58,19 @@ class Ui_MainWindow(object):
 
         self.dots_label = QLabel(self.central_widget)
         self.dots_label.setObjectName(u"dots_label")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.dots_label.sizePolicy().hasHeightForWidth())
-        self.dots_label.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.dots_label.sizePolicy().hasHeightForWidth())
+        self.dots_label.setSizePolicy(sizePolicy2)
         self.dots_label.setAlignment(Qt.AlignCenter)
 
         self.h_layout.addWidget(self.dots_label)
 
         self.minutes_label = QLabel(self.central_widget)
         self.minutes_label.setObjectName(u"minutes_label")
+        sizePolicy1.setHeightForWidth(self.minutes_label.sizePolicy().hasHeightForWidth())
+        self.minutes_label.setSizePolicy(sizePolicy1)
         self.minutes_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.h_layout.addWidget(self.minutes_label)
@@ -73,8 +90,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.hours_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.hours_label.setText(QCoreApplication.translate("MainWindow", u"10", None))
         self.dots_label.setText(QCoreApplication.translate("MainWindow", u":", None))
-        self.minutes_label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.minutes_label.setText(QCoreApplication.translate("MainWindow", u"22", None))
     # retranslateUi
 
